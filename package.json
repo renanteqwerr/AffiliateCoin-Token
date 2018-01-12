@@ -1,0 +1,9 @@
+{
+  "name": "AffiliateCoin-sale",
+  "version": "1.0.0",
+  "author": "Riccardo Ravaro <ravaro.riccardo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "zeppelin-solidity": "^1.4.0"
+  }
+}
