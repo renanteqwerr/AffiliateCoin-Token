@@ -1,8 +1,8 @@
 var AffiliateCoinToken = artifacts.require("../AffiliateCoinToken.sol");
-var ClaimableCrowdSale = artifacts.require("../ClaimableCrowdsale.sol");
+// var ClaimableCrowdSale = artifacts.require("../ClaimableCrowdsale.sol");
 
 module.exports = function(deployer, network, accounts) {
-  if (network === 'development') {
+  // if (network === 'development') {
     const totalSupply = web3.toWei("1000000000", "Ether"); // on Billion total supply
     const bankAddress = web3.eth.accounts[1];
     const beneficiaryAddress = web3.eth.accounts[2];
@@ -13,17 +13,18 @@ module.exports = function(deployer, network, accounts) {
 
     deployer.deploy(AffiliateCoinToken, totalSupply).then(function () {
       return deployer.deploy(AffiliateCoinToken, totalSupply)
-    }).then(function () {
-      return deployer.deploy(
-        ClaimableCrowdSale,
-        AffiliateCoinToken.address,
-        bankAddress,
-        beneficiaryAddress,
-        tokenRate,
-        minBuyableAmount,
-        maxTokensAmount,
-        endDate
-      )
     });
-  }
+    // .then(function () {
+    //   return deployer.deploy(
+    //     ClaimableCrowdSale,
+    //     AffiliateCoinToken.address,
+    //     bankAddress,
+    //     beneficiaryAddress,
+    //     tokenRate,
+    //     minBuyableAmount,
+    //     maxTokensAmount,
+    //     endDate
+    //   )
+    // });
+  // }
 };

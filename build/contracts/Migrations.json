@@ -811,11 +811,13 @@
     "name": "SourceUnit",
     "src": "0:515:3"
   },
-  "compiler": {
-    "name": "solc",
-    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x324c454468eda6e8eba6a66c8deef8b930b4ff4c"
+    }
   },
-  "networks": {},
-  "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-12T08:10:49.982Z"
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2018-01-15T09:18:49.953Z"
 }
