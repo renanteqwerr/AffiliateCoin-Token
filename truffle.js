@@ -1,3 +1,6 @@
+require('babel-register')
+require('babel-polyfill')
+
 module.exports = {
   networks: {
     development: {
@@ -8,8 +11,8 @@ module.exports = {
     "ropsten": {
       network_id: 3,
       host: "localhost",
-      port: 8545,
-      gas: 6000000,
+      port: 7545,
+      gas: 2900000,
       from: "0x1497945569c9e4612e77ad0b286900ef3684d3a6"
     }
   },

@@ -4,6 +4,9 @@
   "author": "Riccardo Ravaro <ravaro.riccardo@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "zeppelin-solidity": "^1.4.0"
+    "asyncawait": "^1.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "zeppelin-solidity": "^1.4.18"
   }
 }

@@ -1,16 +1,18 @@
 const AffiliateCoinToken = artifacts.require("./AffiliateCoinToken.sol")
 
-const expectedTotalSupply = web3.toWei("888888000", "Ether") // AFL
+const expectedTotalSupply = web3.toWei("10000000", "Ether") // AFL
 let token
 
 contract('AffiliateCoinToken', function(accounts) {
   beforeEach(async () => {
-    token = await AffiliateCoinToken.deployed()
+    token = await AffiliateCoinToken.new(expectedTotalSupply).then(function(instance){
+      return instance;
+    });
   })
 
   it("should have correct total supply set", async () => {
     const actualTotalSupply = await token.totalSupply()
-
+    console.log(actualTotalSupply.valueOf());
     assert.equal(actualTotalSupply.valueOf(), web3.toBigNumber(expectedTotalSupply), "Wrong total supply")
   })
 
