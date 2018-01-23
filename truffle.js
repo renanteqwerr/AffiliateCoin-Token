@@ -3,10 +3,17 @@ require('babel-polyfill')
 
 module.exports = {
   networks: {
-    development: {
-      host: "localhost",
+    "cli": {
+      host: '127.0.0.1',
+      port: 8545,
+      network_id: 1111, // Match any network id
+      from: "0x88007f0ee4f9b2d7f68c384af260c6f8fc3e2c98"
+    },
+    "development": {
+      host: '127.0.0.1',
       port: 7545,
-      network_id: "*" // Match any network id
+      network_id: 5777, // Match any network id
+      from: "0x627306090abaB3A6e1400e9345bC60c78a8BEf57"
     },
     "ropsten": {
       network_id: 3,

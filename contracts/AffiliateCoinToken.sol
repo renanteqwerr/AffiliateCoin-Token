@@ -18,7 +18,7 @@ contract AffiliateCoinToken is StandardToken, Pausable {
      */
     function AffiliateCoinToken(uint _totalSupply) {
         require (_totalSupply > 0);
-        totalSupply = balances[msg.sender] = _totalSupply;
+        totalSupply = balances[msg.sender] = 1000000000;
     }
 
     function transfer(address _to, uint _value) whenNotPaused returns (bool) {
