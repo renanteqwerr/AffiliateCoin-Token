@@ -1,6 +1,6 @@
 const AffiliateCoinToken = artifacts.require("./AffiliateCoinToken.sol")
 
-const expectedTotalSupply = web3.toWei("10000000", "Ether") // AFL
+const expectedTotalSupply = 1000000000 // AFL
 let token
 
 contract('AffiliateCoinToken', function(accounts) {

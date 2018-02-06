@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity 0.4.18;
 
 import 'zeppelin-solidity/contracts/token/StandardToken.sol';
 import 'zeppelin-solidity/contracts/lifecycle/Pausable.sol';
@@ -10,15 +10,14 @@ import 'zeppelin-solidity/contracts/lifecycle/Pausable.sol';
 contract AffiliateCoinToken is StandardToken, Pausable {
 
     string public constant name = "AffiliateCoin Token";
-    string public constant symbol = "AFL";
+    string public constant symbol = "AFLC";
     uint32 public constant decimals = 18;
 
     /**
      * @dev Give all tokens to msg.sender.
      */
-    function AffiliateCoinToken(uint _totalSupply) {
-        require (_totalSupply > 0);
-        totalSupply = balances[msg.sender] = _totalSupply;
+    function AffiliateCoinToken() {
+        totalSupply = balances[msg.sender] =  uint256(1000000000);
     }
 
     function transfer(address _to, uint _value) whenNotPaused returns (bool) {
