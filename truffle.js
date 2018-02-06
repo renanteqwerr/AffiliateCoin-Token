@@ -1,45 +1,58 @@
-require('babel-register')
-require('babel-polyfill')
+require('dotenv').config();
+require('babel-register');
+require('babel-polyfill');
+
+require('dotenv').config();
+const Web3 = require("web3");
+const web3 = new Web3();
+const WalletProvider = require("truffle-wallet-provider");
+const Wallet = require('ethereumjs-wallet');
+
+var mainNetPrivateKey = new Buffer(process.env["MAINNET_PRIVATE_KEY"], "hex")
+var mainNetWallet = Wallet.fromPrivateKey(mainNetPrivateKey);
+var mainNetProvider = new WalletProvider(mainNetWallet, "https://mainnet.infura.io/");
+
+var ropstenPrivateKey = new Buffer(process.env["ROPSTEN_PRIVATE_KEY"], "hex")
+var ropstenWallet = Wallet.fromPrivateKey(ropstenPrivateKey);
+var ropstenProvider = new WalletProvider(ropstenWallet, "https://ropsten.infura.io/");
+
+
 
 module.exports = {
   networks: {
-    "cli": {
-      host: '127.0.0.1',
+    development: {
+      host: 'localhost',
       port: 8545,
-      network_id: 1111, // Match any network id
-      from: "0x88007f0ee4f9b2d7f68c384af260c6f8fc3e2c98"
+      network_id: '*', // eslint-disable-line camelcase
     },
-    "development": {
-      host: '127.0.0.1',
+    ropsten: {
+      provider: ropstenProvider,
+      network_id: 3, // eslint-disable-line camelcase
+      gas: 4700036,
+      gasPrice: 20000000000
+    },
+    mainnet: {
+      provider: mainNetProvider,
+      network_id: 1, // eslint-disable-line camelcase
+      gas: 4700036,
+      gasPrice: 20000000000
+    },
+    coverage: {
+      host: 'localhost',
+      network_id: '*', // eslint-disable-line camelcase
+      port: 8555,
+      gas: 0xfffffffffff,
+      gasPrice: 0x01,
+    },
+    testrpc: {
+      host: 'localhost',
+      port: 8545,
+      network_id: '*', // eslint-disable-line camelcase
+    },
+    ganache: {
+      host: 'localhost',
       port: 7545,
-      network_id: 5777, // Match any network id
-      gas: 4700036,
-      gasPrice: 20000000000,
-      from: "0x627306090abaB3A6e1400e9345bC60c78a8BEf57"
+      network_id: '*', // eslint-disable-line camelcase
     },
-    "ropsten": {
-      network_id: 3,
-      host: "localhost",
-      port: 8545,
-      gas: 4700036,
-      gasPrice: 10000000000,
-      from: "0x749d3dcefe46d71a4eb004774efd5dc2bd468d8b"
-    },
-    "ropstenparity": {
-      network_id: 3,
-      host: "127.0.0.1",
-      port: 8545,
-      gas: 4700036,
-      gasPrice: 10000000000,
-      from: "0x749d3dcefe46d71a4eb004774efd5dc2bd468d8b"
-    },
-    "mainnetparity": {
-      network_id: 1,
-      host: "127.0.0.1",
-      port: 8545,
-      gas: 4700036,
-      gasPrice: 25000000000,
-      from: "0x7db3cecaa8abb4a4dfac8c5d85c6138799978d99"
-    }
   },
 };

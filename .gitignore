@@ -4,3 +4,5 @@ node_modules
 build
 /dapp
 /build
+.env
+*.old
