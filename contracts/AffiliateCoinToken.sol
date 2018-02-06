@@ -1,30 +1,14 @@
-pragma solidity 0.4.18;
+pragma solidity ^0.4.18;
+import "zeppelin-solidity/contracts/token/StandardToken.sol";
 
-import 'zeppelin-solidity/contracts/token/StandardToken.sol';
-import 'zeppelin-solidity/contracts/lifecycle/Pausable.sol';
+contract AffiliateCoinToken is StandardToken {
+  string public name = "AffiliateCoin Token";
+  string public symbol = "AFLC";
+  uint public decimals = 2;
+  uint public INITIAL_SUPPLY = 10000 * (10 ** decimals);
 
-/**
- * @title AffiliateCoinToken
- * @dev AffiliateCoin.io token contract.
- */
-contract AffiliateCoinToken is StandardToken, Pausable {
-
-    string public constant name = "AffiliateCoin Token";
-    string public constant symbol = "AFLC";
-    uint32 public constant decimals = 18;
-
-    /**
-     * @dev Give all tokens to msg.sender.
-     */
-    function AffiliateCoinToken() {
-        totalSupply = balances[msg.sender] =  uint256(1000000000);
-    }
-
-    function transfer(address _to, uint _value) whenNotPaused returns (bool) {
-        return super.transfer(_to, _value);
-    }
-
-    function transferFrom(address _from, address _to, uint _value) whenNotPaused returns (bool) {
-        return super.transferFrom(_from, _to, _value);
-    }
+  function HamburgerCoin() public {
+    totalSupply = INITIAL_SUPPLY;
+    balances[msg.sender] = INITIAL_SUPPLY;
+  }
 }
