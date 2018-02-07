@@ -1,4 +1,4 @@
-### AffiliateCoin Token
+# AffiliateCoin Token
 AffiliateCoin Token smart contract
 
 [AffiliateCoin Official website](https://affiliatecoin.io)
