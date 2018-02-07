@@ -1,8 +1,20 @@
+# Editors
 *.sublime-project
 *.sublime-workspace
+
+# node modules
 node_modules
-build
+
 /dapp
 /build
 .env
 *.old
+
+# Flatten folder
+/flatten
+
+# Python
+/include
+.Python
+/lib
+/bin
