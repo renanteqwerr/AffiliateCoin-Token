@@ -1,7 +1,9 @@
 # AffiliateCoin Token (AFLC)
 AffiliateCoin Token smart contract
 
-AFLC Token smart contract is on live network (MainNet)  [Etherescan Link.  (https://etherscan.io/token/0x882a8afa778762b34e0d59482c9f048cc9754898)]
+AFLC Token smart contract is on live network - MainNet.
+[Etherescan Link](https://etherscan.io/token/0x882a8afa778762b34e0d59482c9f048cc9754898).
+
 [AffiliateCoin Official website](https://affiliatecoin.io)
 
     Name  "AffiliateCoin Token"
